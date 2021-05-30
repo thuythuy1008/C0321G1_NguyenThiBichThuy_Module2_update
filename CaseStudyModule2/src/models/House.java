@@ -3,12 +3,12 @@ package models;
 public class House extends Services {
     private String roomStandard;
     private String description;
-    private int floors;
+    private String floors;
 
     public House() {
     }
 
-    public House(String id, String serviceName, float acreageUser, int totalPrice, int totalPeople, int totalDate, String roomStandard, String description, int floors) {
+    public House(String id, String serviceName, String acreageUser, String totalPrice, String totalPeople, String totalDate, String roomStandard, String description, String floors) {
         super(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate);
         this.roomStandard = roomStandard;
         this.description = description;
@@ -31,11 +31,11 @@ public class House extends Services {
         this.description = description;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 

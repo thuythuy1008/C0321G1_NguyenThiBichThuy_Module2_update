@@ -3,13 +3,13 @@ package models;
 public class Villa extends Services {
     private String roomStandard;
     private String description;
-    private float swimmingPoolArea;
-    private int floors;
+    private String swimmingPoolArea;
+    private String floors;
 
     public Villa() {
     }
 
-    public Villa(String id, String serviceName, float acreageUser, int totalPrice, int totalPeople, int totalDate, String roomStandard, String description, float swimmingPoolArea, int floors) {
+    public Villa(String id, String serviceName, String acreageUser, String totalPrice, String totalPeople, String totalDate, String roomStandard, String description, String swimmingPoolArea, String floors) {
         super(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate);
         this.roomStandard = roomStandard;
         this.description = description;
@@ -33,19 +33,19 @@ public class Villa extends Services {
         this.description = description;
     }
 
-    public float getSwimmingPoolArea() {
+    public String getSwimmingPoolArea() {
         return swimmingPoolArea;
     }
 
-    public void setSwimmingPoolArea(float swimmingPoolArea) {
+    public void setSwimmingPoolArea(String swimmingPoolArea) {
         this.swimmingPoolArea = swimmingPoolArea;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 

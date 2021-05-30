@@ -3,15 +3,15 @@ package models;
 public abstract class Services {
     String id;
     String serviceName;
-    float acreageUser;
-    int totalPrice;
-    int totalPeople;
-    int totalDate;
+    String acreageUser;
+    String totalPrice;
+    String totalPeople;
+    String totalDate;
 
     public Services() {
     }
 
-    public Services(String id, String serviceName, float acreageUser, int totalPrice, int totalPeople, int totalDate) {
+    public Services(String id, String serviceName, String acreageUser, String totalPrice, String totalPeople, String totalDate) {
         this.id = id;
         this.serviceName = serviceName;
         this.acreageUser = acreageUser;
@@ -36,35 +36,35 @@ public abstract class Services {
         this.serviceName = serviceName;
     }
 
-    public float getAcreageUser() {
+    public String getAcreageUser() {
         return acreageUser;
     }
 
-    public void setAcreageUser(float acreage) {
+    public void setAcreageUser(String acreage) {
         this.acreageUser = acreage;
     }
 
-    public int getTotalPrice() {
+    public String getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(int totalPrice) {
+    public void setTotalPrice(String totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public int getTotalPeople() {
+    public String getTotalPeople() {
         return totalPeople;
     }
 
-    public void setTotalPeople(int totalPeople) {
+    public void setTotalPeople(String totalPeople) {
         this.totalPeople = totalPeople;
     }
 
-    public int getTotalDate() {
+    public String getTotalDate() {
         return totalDate;
     }
 
-    public void setTotalDate(int totalDate) {
+    public void setTotalDate(String totalDate) {
         this.totalDate = totalDate;
     }
 
