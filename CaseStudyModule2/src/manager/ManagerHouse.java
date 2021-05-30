@@ -1,9 +1,8 @@
 package manager;
 
 import commons.FuncWriteRead;
-import commons.ValidateService;
+import commons.FormatServiceException;
 import models.House;
-import models.Villa;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class ManagerHouse {
         House house = new House(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, roomStandard, description, floors);
         listHouse.add(house);
         System.out.println(listHouse);
-        FuncWriteRead.writeHouseToCSV("src\\data\\House.csv", listHouse, true);
+        FuncWriteRead.writeHouseToCSV("src\\data\\house.csv", listHouse, true);
     }
 
     public static String inputIdHouse() {
@@ -36,9 +35,9 @@ public class ManagerHouse {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdHouse = scanner.nextLine();
-                ValidateService.checkIdHouse(inputIdHouse);
+                FormatServiceException.checkIdHouse(inputIdHouse);
                 return inputIdHouse;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -46,7 +45,7 @@ public class ManagerHouse {
     }
 
     public void showHouse() {
-        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\House.csv");
+        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
         for (House house : listHouse) {
             System.out.println(house.showInfor());
         }

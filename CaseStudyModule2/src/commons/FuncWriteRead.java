@@ -1,5 +1,6 @@
 package commons;
 
+import models.Customer;
 import models.House;
 import models.Room;
 import models.Villa;
@@ -25,7 +26,7 @@ public class FuncWriteRead {
 
     public static void writeRoomToCSV(String fileName, List<Room> listRoom, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\Room.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\room.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Room room : listRoom) {
                 bufferedWriter.write(room.toString());
@@ -39,10 +40,25 @@ public class FuncWriteRead {
 
     public static void writeHouseToCSV(String fileName, List<House> listHouse, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\House.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\house.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (House house : listHouse) {
                 bufferedWriter.write(house.toString());
+            }
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeCustomerToCSV(String fileName, List<Customer> listCustomer, boolean status) {
+        try {
+            FileWriter outputStream = new FileWriter("src\\data\\customer.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
+            for (Customer customer : listCustomer) {
+                bufferedWriter.write(customer.toString());
             }
             bufferedWriter.newLine();
             bufferedWriter.close();
@@ -75,7 +91,7 @@ public class FuncWriteRead {
     public static List<Room> readRoomFromCSV(String fileName) {
         List<Room> listRoom = new ArrayList<>();
         try {
-            FileReader inputStream = new FileReader("src\\data\\Room.csv");
+            FileReader inputStream = new FileReader("src\\data\\room.csv");
             BufferedReader bufferedReader = new BufferedReader(inputStream);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -95,7 +111,7 @@ public class FuncWriteRead {
     public static List<House> readHouseFromCSV(String fileName) {
         List<House> listHouse = new ArrayList<>();
         try {
-            FileReader inputStream = new FileReader("src\\data\\House.csv");
+            FileReader inputStream = new FileReader("src\\data\\house.csv");
             BufferedReader bufferedReader = new BufferedReader(inputStream);
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -110,5 +126,25 @@ public class FuncWriteRead {
             e.printStackTrace();
         }
         return listHouse;
+    }
+
+    public static List<Customer> readCustomerFromCSV(String fileName) {
+        List<Customer> listCustomer = new ArrayList<>();
+        try {
+            FileReader inputStream = new FileReader("src\\data\\customer.csv");
+            BufferedReader bufferedReader = new BufferedReader(inputStream);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] strings = line.split(",");
+                Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7]);
+                listCustomer.add(customer);
+                System.out.println(customer);
+            }
+            bufferedReader.close();
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listCustomer;
     }
 }

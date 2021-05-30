@@ -1,5 +1,6 @@
 package controllers;
 
+import manager.ManagerCustomer;
 import manager.ManagerHouse;
 import manager.ManagerRoom;
 import manager.ManagerVilla;
@@ -11,6 +12,7 @@ public class MainController {
     static ManagerVilla managerVilla = new ManagerVilla();
     static ManagerRoom managerRoom = new ManagerRoom();
     static ManagerHouse managerHouse = new ManagerHouse();
+    static ManagerCustomer managerCustomer=new ManagerCustomer();
 
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -34,8 +36,10 @@ public class MainController {
                     showServices();
                     break;
                 case 3:
+                    managerCustomer.addNewCustomer();
                     break;
                 case 4:
+                    managerCustomer.showInformationCustomers();
                     break;
                 case 5:
                     break;
@@ -65,10 +69,10 @@ public class MainController {
                     managerVilla.addVilla();
                     break;
                 case 2:
-                    managerRoom.addRoom();
+                    managerHouse.addHouse();
                     break;
                 case 3:
-                    managerHouse.addHouse();
+                    managerRoom.addRoom();
                     break;
                 case 4:
                     displayMainMenu();
@@ -98,10 +102,10 @@ public class MainController {
                     managerVilla.showVilla();
                     break;
                 case 2:
-
+                    managerHouse.showHouse();
                     break;
                 case 3:
-
+                    managerRoom.showRoom();
                     break;
                 case 4:
 

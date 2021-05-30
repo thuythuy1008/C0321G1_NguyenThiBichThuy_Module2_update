@@ -1,7 +1,7 @@
 package manager;
 
 import commons.FuncWriteRead;
-import commons.ValidateService;
+import commons.FormatServiceException;
 import models.Villa;
 
 import java.util.ArrayList;
@@ -36,9 +36,9 @@ public class ManagerVilla {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdVilla = scanner.nextLine();
-                ValidateService.checkIdVilla(inputIdVilla);
+                FormatServiceException.checkIdVilla(inputIdVilla);
                 return inputIdVilla;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -51,9 +51,9 @@ public class ManagerVilla {
             try {
                 System.out.println("Diện tích hồ bơi: ");
                 inputSwimmingPoolArea = scanner.nextLine();
-                ValidateService.checkSwimmingPoolArea(inputSwimmingPoolArea);
+                FormatServiceException.checkSwimmingPoolArea(inputSwimmingPoolArea);
                 return inputSwimmingPoolArea;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }

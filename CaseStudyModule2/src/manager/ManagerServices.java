@@ -1,6 +1,6 @@
 package manager;
 
-import commons.ValidateService;
+import commons.FormatServiceException;
 import java.util.Scanner;
 
 public class ManagerServices {
@@ -15,9 +15,9 @@ public class ManagerServices {
             try {
                 System.out.println("Nhập tên dịch vụ: ");
                 inputServiceName = scanner.nextLine();
-                ValidateService.checkVerviceName(inputServiceName);
+                FormatServiceException.checkVerviceName(inputServiceName);
                 return inputServiceName;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -30,9 +30,9 @@ public class ManagerServices {
             try {
                 System.out.println("Diện tích sử dụng: ");
                 inputAcreageUser = scanner.nextLine();
-                ValidateService.checkAcreageUser(inputAcreageUser);
+                FormatServiceException.checkAcreageUser(inputAcreageUser);
                 return inputAcreageUser;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -44,9 +44,9 @@ public class ManagerServices {
             try {
                 System.out.println("Chi phí thuê: ");
                 inputTotalPrice = scanner.nextLine();
-                ValidateService.checkTotalPrice(inputTotalPrice);
+                FormatServiceException.checkTotalPrice(inputTotalPrice);
                 return inputTotalPrice;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -59,9 +59,9 @@ public class ManagerServices {
             try {
                 System.out.println("Số lượng người tối đa: ");
                 inputTotalPeople = scanner.nextLine();
-                ValidateService.checkTotalPeople(inputTotalPeople);
+                FormatServiceException.checkTotalPeople(inputTotalPeople);
                 return inputTotalPeople;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -74,9 +74,9 @@ public class ManagerServices {
             try {
                 System.out.println("Kiểu thuê: ");
                 inputTotalDate = scanner.nextLine();
-                ValidateService.checkTotalDate(inputTotalDate);
+                FormatServiceException.checkTotalDate(inputTotalDate);
                 return inputTotalDate;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -89,9 +89,9 @@ public class ManagerServices {
             try {
                 System.out.println("Tiêu chuẩn phòng: ");
                 inputRoomStandard = scanner.nextLine();
-                ValidateService.checkRoomStandard(inputRoomStandard);
+                FormatServiceException.checkRoomStandard(inputRoomStandard);
                 return inputRoomStandard;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -104,9 +104,9 @@ public class ManagerServices {
             try {
                 System.out.println("Mô tả tiện nghi: ");
                 inputDescription = scanner.nextLine();
-                ValidateService.checkDescription(inputDescription);
+                FormatServiceException.checkDescription(inputDescription);
                 return inputDescription;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -119,9 +119,9 @@ public class ManagerServices {
             try {
                 System.out.println("Số tầng:");
                 inputFloors = scanner.nextLine();
-                ValidateService.checkFloors(inputFloors);
+                FormatServiceException.checkFloors(inputFloors);
                 return inputFloors;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }

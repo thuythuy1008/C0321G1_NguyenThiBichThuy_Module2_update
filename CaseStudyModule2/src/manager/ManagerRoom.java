@@ -1,7 +1,7 @@
 package manager;
 
 import commons.FuncWriteRead;
-import commons.ValidateService;
+import commons.FormatServiceException;
 import models.Room;
 
 import java.util.ArrayList;
@@ -24,7 +24,7 @@ public class ManagerRoom {
         Room room = new Room(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, freeService);
         listRoom.add(room);
         System.out.println(listRoom);
-        FuncWriteRead.writeRoomToCSV("src\\data\\Room.csv", listRoom, true);
+        FuncWriteRead.writeRoomToCSV("src\\data\\room.csv", listRoom, true);
     }
 
     public static String inputIdRoom() {
@@ -33,9 +33,9 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdRoom = scanner.nextLine();
-                ValidateService.checkIdRoom(inputIdRoom);
+                FormatServiceException.checkIdRoom(inputIdRoom);
                 return inputIdRoom;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -48,9 +48,9 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập dịch vụ đi kèm: ");
                 inputFreeService = scanner.nextLine();
-                ValidateService.checkIdRoom(inputFreeService);
+                FormatServiceException.checkFreeService(inputFreeService);
                 return inputFreeService;
-            } catch (ValidateService e) {
+            } catch (FormatServiceException e) {
 //                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -58,7 +58,7 @@ public class ManagerRoom {
     }
 
     public void showRoom() {
-        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\Room.csv");
+        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
         for (Room room : listRoom) {
             System.out.println(room.showInfor());
         }
