@@ -2,10 +2,11 @@ package manager;
 
 import commons.FormatCustomerException;
 import commons.FuncWriteRead;
+import models.ComparatorByName;
 import models.Customer;
-import models.Villa;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -151,6 +152,7 @@ public class ManagerCustomer {
 
     public void showInformationCustomers() {
         listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+        Collections.sort(listCustomer, new ComparatorByName());
         for (Customer customer : listCustomer) {
             System.out.println(customer.showInfor());
         }
