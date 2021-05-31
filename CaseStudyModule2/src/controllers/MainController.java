@@ -1,9 +1,6 @@
 package controllers;
 
-import manager.ManagerCustomer;
-import manager.ManagerHouse;
-import manager.ManagerRoom;
-import manager.ManagerVilla;
+import manager.*;
 
 import java.util.Scanner;
 
@@ -13,6 +10,7 @@ public class MainController {
     static ManagerRoom managerRoom = new ManagerRoom();
     static ManagerHouse managerHouse = new ManagerHouse();
     static ManagerCustomer managerCustomer=new ManagerCustomer();
+    static ManagerBooking managerBooking=new ManagerBooking();
 
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -42,6 +40,7 @@ public class MainController {
                     managerCustomer.showInformationCustomers();
                     break;
                 case 5:
+                    managerBooking.addNewBooking();
                     break;
                 case 6:
                     break;

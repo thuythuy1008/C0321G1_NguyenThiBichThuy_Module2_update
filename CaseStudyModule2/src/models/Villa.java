@@ -61,16 +61,16 @@ public class Villa extends Services {
     @Override
     public String showInfor() {
         return "Villa{" +
-                "roomStandard='" + roomStandard + '\'' +
-                ", description='" + description + '\'' +
-                ", swimmingPoolArea=" + swimmingPoolArea + '\'' +
-                ", floors=" + floors + '\'' +
-                ", id='" + id + '\'' +
+                "id='" + id + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", acreageUser=" + acreageUser + '\'' +
                 ", totalPrice=" + totalPrice + '\'' +
                 ", totalPeople=" + totalPeople + '\'' +
                 ", totalDate=" + totalDate + '\'' +
+                ", roomStandard='" + roomStandard + '\'' +
+                ", description='" + description + '\'' +
+                ", swimmingPoolArea=" + swimmingPoolArea + '\'' +
+                ", floors=" + floors + '\'' +
                 '}';
     }
 }

@@ -2,7 +2,7 @@ package manager;
 
 import commons.FormatCustomerException;
 import commons.FuncWriteRead;
-import models.ComparatorByName;
+import models.ComparatorByNameCustomer;
 import models.Customer;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class ManagerCustomer {
                 FormatCustomerException.nameException(inputNameCustomer);
                 return inputNameCustomer;
             } catch (FormatCustomerException e) {
-                e.printStackTrace();
+//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -152,9 +152,14 @@ public class ManagerCustomer {
 
     public void showInformationCustomers() {
         listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
-        Collections.sort(listCustomer, new ComparatorByName());
+        Collections.sort(listCustomer, new ComparatorByNameCustomer());
+        int number=1;
         for (Customer customer : listCustomer) {
+            System.out.print(number++ +" ");
             System.out.println(customer.showInfor());
         }
+//        System.out.println();
     }
+
+
 }

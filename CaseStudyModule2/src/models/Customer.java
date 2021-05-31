@@ -1,6 +1,6 @@
 package models;
 
-public class Customer implements Comparable<Customer>{
+public class Customer {
     private String nameCustomer;
     private String birthDay;
     private String gender;
@@ -111,10 +111,5 @@ public class Customer implements Comparable<Customer>{
                 ", customerType='" + customerType + '\'' +
                 ", address='" + address + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Customer o) {
-        return this.getNameCustomer().compareTo(o.getNameCustomer());
     }
 }

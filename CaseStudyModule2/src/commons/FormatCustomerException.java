@@ -6,28 +6,28 @@ public class FormatCustomerException extends Exception {
     }
 
     public static void nameException(String string) throws FormatCustomerException {
-        String regex = "^[A-Za-z]+$";
+        String regex = "^([A-Z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Tên Khách hàng phải in hoa ký tự đầu tiên trong mỗi từ!!!");
         }
     }
 
     public static void checkBirthDay(String string) throws FormatCustomerException {
-        String regex = "^[0[1-9]|[12][0-9]|3[01]][-|/][0[1-9]|1[12][-|/]][(19)[0-9]{2}|(200)[123]]$";
+        String regex = "^(0[1-9]|[12][0-9]|3[01])[-|/](0[1-9]|1[12])[-|/](19[0-9]{2}|200[0123])$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Vui lòng nhập ngày tháng năm sinh theo đúng yêu cầu!!!");
         }
     }
 
     public static void genderException(String string) throws FormatCustomerException {
-        String regex = "^[A-Za-z]+$";
+        String regex = "^([Mm][Aa][Ll][Ee]|[Ff][Ee][Mm][Aa][Ll][Ee]|[Uu][Nn][Kk][Nn][Oo][Ww])$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Vui lòng nhập giới tính theo đúng yêu cầu!!!");
         }
     }
 
     public static void idCardException(String string) throws FormatCustomerException {
-        String regex = "^[0-9]{3}\\ [0-9]{3}\\ [0-9]{3}$";
+        String regex = "^(([0-9]{3}[\\s]{1}){2}[0-9]{3})$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Id Card phải có 9 chữ số và theo định dạng XXX XXX XXX!!!");
         }
@@ -48,14 +48,14 @@ public class FormatCustomerException extends Exception {
     }
 
     public static void customerTypeException(String string) throws FormatCustomerException {
-        String regex = "^[Thường|Tiềm năng|Thân thiết|Vip]$";
+        String regex = "^(Diamond|Platinium|Gold|Silver|Member)$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Vui lòng nhập loại khách hàng theo đúng yêu cầu!!!");
         }
     }
 
     public static void addressException(String string) throws FormatCustomerException {
-        String regex = "^[0-9A-Za-z]+$";
+        String regex = "^.*$";
         if (!string.matches(regex)) {
             throw new FormatCustomerException("Vui lòng nhập địa chỉ theo đúng yêu cầu!!!");
         }

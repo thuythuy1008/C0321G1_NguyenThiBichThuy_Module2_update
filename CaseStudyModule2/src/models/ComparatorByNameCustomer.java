@@ -2,7 +2,7 @@ package models;
 
 import java.util.Comparator;
 
-public class ComparatorByName implements Comparator<Customer> {
+public class ComparatorByNameCustomer implements Comparator<Customer> {
     @Override
     public int compare(Customer o1, Customer o2) {
         if (o1.getNameCustomer().compareTo(o2.getNameCustomer()) == 0) {

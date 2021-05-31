@@ -16,8 +16,8 @@ public class FuncWriteRead {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Villa villa : listVilla) {
                 bufferedWriter.write(villa.toString());
+                bufferedWriter.newLine();
             }
-            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -30,8 +30,8 @@ public class FuncWriteRead {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Room room : listRoom) {
                 bufferedWriter.write(room.toString());
+                bufferedWriter.newLine();
             }
-            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -44,10 +44,9 @@ public class FuncWriteRead {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (House house : listHouse) {
                 bufferedWriter.write(house.toString());
+                bufferedWriter.newLine();
             }
-            bufferedWriter.newLine();
             bufferedWriter.close();
-            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,10 +58,21 @@ public class FuncWriteRead {
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Customer customer : listCustomer) {
                 bufferedWriter.write(customer.toString());
+                bufferedWriter.newLine();
             }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeBookingServiceToCSV(String fileName, String string, boolean trangThai) {
+        try {
+            FileWriter outputStream = new FileWriter("src\\data\\booking.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
+            bufferedWriter.write(string);
             bufferedWriter.newLine();
             bufferedWriter.close();
-            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -98,7 +108,7 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 Room room = new Room(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6]);
                 listRoom.add(room);
-                System.out.println(room);
+//                System.out.println(room);
             }
             bufferedReader.close();
             inputStream.close();
@@ -118,7 +128,7 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 House house = new House(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7], strings[8]);
                 listHouse.add(house);
-                System.out.println(house);
+//                System.out.println(house);
             }
             bufferedReader.close();
             inputStream.close();
@@ -138,7 +148,6 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 Customer customer = new Customer(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7]);
                 listCustomer.add(customer);
-                System.out.println(customer);
             }
             bufferedReader.close();
             inputStream.close();

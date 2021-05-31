@@ -28,13 +28,13 @@ public class Room extends Services {
     @Override
     public String showInfor() {
         return "Room{" +
-                "freeService='" + freeService + '\'' +
-                ", id='" + id + '\'' +
+                "id='" + id + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", acreageUser=" + acreageUser + '\'' +
                 ", totalPrice=" + totalPrice + '\'' +
                 ", totalPeople=" + totalPeople + '\'' +
                 ", totalDate=" + totalDate + '\'' +
+                ", freeService='" + freeService + '\'' +
                 '}';
     }
 }

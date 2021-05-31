@@ -26,7 +26,7 @@ public class ManagerVilla {
         String floors = ManagerServices.inputFloors();
         Villa villa = new Villa(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, roomStandard, description, swimmingPoolArea, floors);
         listVilla.add(villa);
-        System.out.println(listVilla);
+//        System.out.println(listVilla);
         FuncWriteRead.writeVillaToCSV("src\\data\\Villa.csv", listVilla, true);
     }
 
