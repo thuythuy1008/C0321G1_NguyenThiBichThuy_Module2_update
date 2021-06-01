@@ -1,20 +1,21 @@
 package controllers;
 
 import manager.*;
+import models.Employee;
 
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class MainController {
-    //    static ManagerServices managerServices=new ManagerServices();
     static ManagerVilla managerVilla = new ManagerVilla();
     static ManagerRoom managerRoom = new ManagerRoom();
     static ManagerHouse managerHouse = new ManagerHouse();
     static ManagerCustomer managerCustomer = new ManagerCustomer();
     static ManagerBooking managerBooking = new ManagerBooking();
+    static ManagerEmployee managerEmployee = new ManagerEmployee();
 
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
-//        menu tùy chọn chức năng
         while (true) {
             System.out.println("Chọn 1 trong các chức năng trong Menu: \n" +
                     "1. Add New Services \n" +
@@ -43,6 +44,7 @@ public class MainController {
                     managerBooking.addNewBooking();
                     break;
                 case 6:
+                    managerEmployee.addEmployee();
                     break;
                 case 7:
                     System.exit(0);

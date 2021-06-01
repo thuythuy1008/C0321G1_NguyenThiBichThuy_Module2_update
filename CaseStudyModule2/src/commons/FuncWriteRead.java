@@ -1,9 +1,6 @@
 package commons;
 
-import models.Customer;
-import models.House;
-import models.Room;
-import models.Villa;
+import models.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -66,12 +63,26 @@ public class FuncWriteRead {
         }
     }
 
-    public static void writeBookingServiceToCSV(String fileName, String string, boolean trangThai) {
+    public static void writeBookingServiceToCSV(String fileName, String string, boolean status) {
         try {
             FileWriter outputStream = new FileWriter("src\\data\\booking.csv");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             bufferedWriter.write(string);
             bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void writeEmployeeToCSV(String fileName, List<Employee> listEmployee, boolean status) {
+        try {
+            FileWriter outputStream = new FileWriter("src\\data\\employee.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
+            for (Employee employee : listEmployee) {
+                bufferedWriter.write(employee.toString());
+                bufferedWriter.newLine();
+            }
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -155,5 +166,24 @@ public class FuncWriteRead {
             e.printStackTrace();
         }
         return listCustomer;
+    }
+
+    public static List<Employee> readEmployeeFromCSV(String fileName) {
+        List<Employee> listEmployee = new ArrayList<>();
+        try {
+            FileReader inputStream = new FileReader("src\\data\\employee.csv");
+            BufferedReader bufferedReader = new BufferedReader(inputStream);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] strings = line.split(",");
+                Employee employee = new Employee(strings[0], strings[1], strings[2]);
+                listEmployee.add(employee);
+            }
+            bufferedReader.close();
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return listEmployee;
     }
 }
