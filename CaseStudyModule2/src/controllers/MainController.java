@@ -13,6 +13,7 @@ public class MainController {
     static ManagerCustomer managerCustomer = new ManagerCustomer();
     static ManagerBooking managerBooking = new ManagerBooking();
     static ManagerEmployee managerEmployee = new ManagerEmployee();
+    static CinemaForCustomer cinemaForCustomer = new CinemaForCustomer();
 
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -24,7 +25,8 @@ public class MainController {
                     "4. Show Information of Customer \n" +
                     "5. Add New Booking \n" +
                     "6. Show Information of Employee \n" +
-                    "7. Exit");
+                    "7. Cinema 4D for Customer \n" +
+                    "8. Exit");
             Scanner input = new Scanner(System.in);
             int chooseService = Integer.parseInt(input.nextLine());
             switch (chooseService) {
@@ -47,6 +49,8 @@ public class MainController {
                     managerEmployee.addEmployee();
                     break;
                 case 7:
+                    cinemaForCustomer.cinema4D();
+                case 8:
                     System.exit(0);
                 default:
                     System.out.println("Chức năng bạn chọn không có trong menu.Vui lòng chọn lại!!!");

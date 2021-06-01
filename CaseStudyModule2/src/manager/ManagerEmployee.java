@@ -48,7 +48,7 @@ public class ManagerEmployee {
         Set<Integer> keySet = map1.keySet();
         System.out.println("Toàn bộ nhân viên có trong Furama: ");
         for (Integer key : keySet) {
-            System.out.println(key + " " + map1.get(key).toString());
+            System.out.println(key + " " + map1.get(key).showInfor());
         }
     }
 }

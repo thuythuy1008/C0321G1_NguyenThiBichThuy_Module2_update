@@ -15,7 +15,7 @@ public class ManagerCustomer {
     static List<Customer> listCustomer = new ArrayList();
 
     public void addNewCustomer() {
-        System.out.println("Thêm khách hàng!!!");
+        listCustomer=FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
         String nameCustomer = inputNameCustomer();
         String birthDay = inputBirthDay();
         String gender = inputGender();
