@@ -12,6 +12,7 @@ public class ManagerRoom {
     static List<Room> listRoom = new ArrayList();
 
     public void addRoom() {
+        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
         System.out.println("Thêm Room!!! ");
         String id = inputIdRoom();
         String serviceName = ManagerServices.inputServiceName();

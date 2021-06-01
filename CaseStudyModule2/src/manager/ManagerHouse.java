@@ -12,6 +12,7 @@ public class ManagerHouse {
     static List<House> listHouse = new ArrayList();
 
     public void addHouse() {
+        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
         System.out.println("Thêm House!!! ");
         String id = inputIdHouse();
         String serviceName = ManagerServices.inputServiceName();

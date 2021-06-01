@@ -10,6 +10,7 @@ public class ManagerEmployee {
     static List<Employee> listEmployee = new ArrayList();
 
     public void addEmployee() {
+        listEmployee = FuncWriteRead.readEmployeeFromCSV("src\\data\\employee.csv");
         Employee employee1 = new Employee("Nguyễn Văn A", "19", "Đà Nẵng");
         listEmployee.add(employee1);
         Employee employee2 = new Employee("Nguyễn Văn Bình", "25", "Quảng Trị");

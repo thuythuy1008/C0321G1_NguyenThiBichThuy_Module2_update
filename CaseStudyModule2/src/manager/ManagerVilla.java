@@ -11,6 +11,7 @@ public class ManagerVilla {
     static List<Villa> listVilla = new ArrayList();
 
     public void addVilla() {
+        listVilla = FuncWriteRead.readVillaFromCSV("src\\data\\Villa.csv");
         System.out.println("Thêm Villa!!! ");
         String id = inputIdVilla();
         String serviceName = ManagerServices.inputServiceName();
