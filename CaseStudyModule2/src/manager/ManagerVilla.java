@@ -24,7 +24,6 @@ public class ManagerVilla {
         String floors = ManagerServices.inputFloors();
         Villa villa = new Villa(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, roomStandard, description, swimmingPoolArea, floors);
         listVilla.add(villa);
-//        System.out.println(listVilla);
         FuncWriteRead.writeVillaToCSV("src\\data\\Villa.csv", listVilla, true);
     }
 
@@ -37,7 +36,6 @@ public class ManagerVilla {
                 FormatServiceException.checkIdVilla(inputIdVilla);
                 return inputIdVilla;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -52,7 +50,6 @@ public class ManagerVilla {
                 FormatServiceException.checkSwimmingPoolArea(inputSwimmingPoolArea);
                 return inputSwimmingPoolArea;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }

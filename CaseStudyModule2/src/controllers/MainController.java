@@ -26,7 +26,8 @@ public class MainController {
                     "5. Add New Booking \n" +
                     "6. Show Information of Employee \n" +
                     "7. Cinema 4D for Customer \n" +
-                    "8. Exit");
+                    "8. Search Employee records of Furama resort \n" +
+                    "9. Exit");
             Scanner input = new Scanner(System.in);
             int chooseService = Integer.parseInt(input.nextLine());
             switch (chooseService) {
@@ -51,6 +52,8 @@ public class MainController {
                 case 7:
                     cinemaForCustomer.cinema4D();
                 case 8:
+                    managerEmployee.searchEmployee();
+                case 9:
                     System.exit(0);
                 default:
                     System.out.println("Chức năng bạn chọn không có trong menu.Vui lòng chọn lại!!!");

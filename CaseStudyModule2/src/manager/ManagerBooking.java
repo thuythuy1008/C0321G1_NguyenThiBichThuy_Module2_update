@@ -16,7 +16,7 @@ public class ManagerBooking {
     static List<Villa> listVilla = new ArrayList();
     static List<House> listHouse = new ArrayList();
     static List<Room> listRoom = new ArrayList();
-    ManagerCustomer managerCustomer = new ManagerCustomer();
+    static ManagerCustomer managerCustomer = new ManagerCustomer();
     static ManagerVilla managerVilla = new ManagerVilla();
     static ManagerRoom managerRoom = new ManagerRoom();
     static ManagerHouse managerHouse = new ManagerHouse();

@@ -24,7 +24,6 @@ public class ManagerHouse {
         String floors = ManagerServices.inputFloors();
         House house = new House(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, roomStandard, description, floors);
         listHouse.add(house);
-//        System.out.println(listHouse);
         FuncWriteRead.writeHouseToCSV("src\\data\\house.csv", listHouse, true);
     }
 
@@ -37,7 +36,6 @@ public class ManagerHouse {
                 FormatServiceException.checkIdHouse(inputIdHouse);
                 return inputIdHouse;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }

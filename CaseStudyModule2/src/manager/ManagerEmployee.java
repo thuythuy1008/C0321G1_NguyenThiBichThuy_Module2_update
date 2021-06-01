@@ -51,4 +51,19 @@ public class ManagerEmployee {
             System.out.println(key + " " + map1.get(key).showInfor());
         }
     }
+
+    public void searchEmployee() {
+        Stack<Employee> stack = new Stack<>();
+        listEmployee = FuncWriteRead.readEmployeeFromCSV("src\\data\\employee.csv");
+        for (Employee employee : listEmployee) {
+            stack.push(employee);
+        }
+        System.out.println("Nhập họ tên nhân viên cần tìm!");
+        String name = scanner.nextLine();
+        for (Employee employee : stack) {
+            if (name.equals(employee.getNameEmployee())) {
+                System.out.println(employee.showInfor());
+            }
+        }
+    }
 }

@@ -22,7 +22,6 @@ public class ManagerRoom {
         String freeService = inputFreeService();
         Room room = new Room(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, freeService);
         listRoom.add(room);
-//        System.out.println(listRoom);
         FuncWriteRead.writeRoomToCSV("src\\data\\room.csv", listRoom, true);
     }
 
@@ -35,7 +34,6 @@ public class ManagerRoom {
                 FormatServiceException.checkIdRoom(inputIdRoom);
                 return inputIdRoom;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -50,7 +48,6 @@ public class ManagerRoom {
                 FormatServiceException.checkFreeService(inputFreeService);
                 return inputFreeService;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }

@@ -15,7 +15,7 @@ public class ManagerCustomer {
     static List<Customer> listCustomer = new ArrayList();
 
     public void addNewCustomer() {
-        listCustomer=FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+        listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
         String nameCustomer = inputNameCustomer();
         String birthDay = inputBirthDay();
         String gender = inputGender();
@@ -26,7 +26,6 @@ public class ManagerCustomer {
         String address = inputAddress();
         Customer customer = new Customer(nameCustomer, birthDay, gender, identityCard, phoneNumber, email, customerType, address);
         listCustomer.add(customer);
-//        System.out.println(listCustomer);
         FuncWriteRead.writeCustomerToCSV("src\\data\\customer.csv", listCustomer, true);
     }
 
@@ -39,7 +38,6 @@ public class ManagerCustomer {
                 FormatCustomerException.nameException(inputNameCustomer);
                 return inputNameCustomer;
             } catch (FormatCustomerException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -153,13 +151,10 @@ public class ManagerCustomer {
     public void showInformationCustomers() {
         listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
         Collections.sort(listCustomer, new ComparatorByNameCustomer());
-        int number=1;
+        int number = 1;
         for (Customer customer : listCustomer) {
-            System.out.print(number++ +" ");
+            System.out.print(number++ + " ");
             System.out.println(customer.showInfor());
         }
-//        System.out.println();
     }
-
-
 }

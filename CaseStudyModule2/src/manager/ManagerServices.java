@@ -1,14 +1,12 @@
 package manager;
 
 import commons.FormatServiceException;
+
 import java.util.Scanner;
 
 public class ManagerServices {
     static Scanner scanner = new Scanner(System.in);
 
-
-
-    //    các chức năng quản lí CRUD
     public static String inputServiceName() {
         String inputServiceName;
         while (true) {
@@ -18,7 +16,6 @@ public class ManagerServices {
                 FormatServiceException.checkVerviceName(inputServiceName);
                 return inputServiceName;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -33,12 +30,12 @@ public class ManagerServices {
                 FormatServiceException.checkAcreageUser(inputAcreageUser);
                 return inputAcreageUser;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
     }
-    public static String inputTotalPrice(){
+
+    public static String inputTotalPrice() {
         String inputTotalPrice;
         while (true) {
             try {
@@ -47,13 +44,12 @@ public class ManagerServices {
                 FormatServiceException.checkTotalPrice(inputTotalPrice);
                 return inputTotalPrice;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
     }
 
-    public static String inputTotalPeople(){
+    public static String inputTotalPeople() {
         String inputTotalPeople;
         while (true) {
             try {
@@ -62,13 +58,12 @@ public class ManagerServices {
                 FormatServiceException.checkTotalPeople(inputTotalPeople);
                 return inputTotalPeople;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
     }
 
-    public static String inputTotalDate(){
+    public static String inputTotalDate() {
         String inputTotalDate;
         while (true) {
             try {
@@ -77,7 +72,6 @@ public class ManagerServices {
                 FormatServiceException.checkTotalDate(inputTotalDate);
                 return inputTotalDate;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -92,7 +86,6 @@ public class ManagerServices {
                 FormatServiceException.checkRoomStandard(inputRoomStandard);
                 return inputRoomStandard;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -107,7 +100,6 @@ public class ManagerServices {
                 FormatServiceException.checkDescription(inputDescription);
                 return inputDescription;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
@@ -122,7 +114,6 @@ public class ManagerServices {
                 FormatServiceException.checkFloors(inputFloors);
                 return inputFloors;
             } catch (FormatServiceException e) {
-//                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
         }
