@@ -9,8 +9,8 @@ public class MainController {
     static ManagerVilla managerVilla = new ManagerVilla();
     static ManagerRoom managerRoom = new ManagerRoom();
     static ManagerHouse managerHouse = new ManagerHouse();
-    static ManagerCustomer managerCustomer=new ManagerCustomer();
-    static ManagerBooking managerBooking=new ManagerBooking();
+    static ManagerCustomer managerCustomer = new ManagerCustomer();
+    static ManagerBooking managerBooking = new ManagerBooking();
 
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class MainController {
             System.out.println("Chọn 1 trong các chức năng trong Menu: \n" +
                     "1. Add New Services \n" +
                     "2. Show Services \n" +
-                    "3. Add New Customer \n " +
+                    "3. Add New Customer \n" +
                     "4. Show Information of Customer \n" +
                     "5. Add New Booking \n" +
                     "6. Show Information of Employee \n" +
@@ -57,7 +57,7 @@ public class MainController {
             System.out.println("Chọn 1 trong các chức năng trong Menu: \n" +
                     "1. Add New Villa \n" +
                     "2. Add New House \n" +
-                    "3. Add New Room \n " +
+                    "3. Add New Room \n" +
                     "4. Back to menu \n" +
                     "5. Exit \n");
 
@@ -88,7 +88,7 @@ public class MainController {
             System.out.println("Chọn 1 trong các chức năng trong Menu: \n" +
                     "1. Show all Villa \n" +
                     "2. Show all House \n" +
-                    "3. Show all Room \n " +
+                    "3. Show all Room \n" +
                     "4. Show All Name Villa Not Duplicate \n" +
                     "5. Show All Name House Not Duplicate \n" +
                     "6. Show All Name Name Not Duplicate \n" +
@@ -107,11 +107,13 @@ public class MainController {
                     managerRoom.showRoom();
                     break;
                 case 4:
-
+                    managerVilla.showNameVillaNotDuplicate();
                     break;
                 case 5:
+                    managerHouse.showNameHouseNotDuplicate();
                     break;
                 case 6:
+                    managerRoom.showNameRoomNotDuplicate();
                     break;
                 case 7:
                     displayMainMenu();

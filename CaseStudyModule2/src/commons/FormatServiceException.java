@@ -27,7 +27,7 @@ public class FormatServiceException extends Exception {
     }
 
     public static void checkVerviceName(String string) throws FormatServiceException {
-        String regex = "^[A-Z]{1}+[a-z]{0,}$";
+        String regex = "^([A-Z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ0-9]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập tên theo đúng yêu cầu!!!");
         }
@@ -55,21 +55,21 @@ public class FormatServiceException extends Exception {
     }
 
     public static void checkTotalDate(String string) throws FormatServiceException {
-        String regex = "^[A-Z]{1}+[a-z]{0,}+\\ +[a-z]{0,}$";
+        String regex = "^(Ngày|Tuần|Tháng)$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập kiểu thuê theo đúng yêu cầu!!!");
         }
     }
 
     public static void checkRoomStandard(String string) throws FormatServiceException {
-        String regex = "^[A-Z]{1}+[a-z]{0,}+\\ +[a-z]{0,}$";
+        String regex = "^([A-Za-z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập tiêu chuẩn phòng theo đúng yêu cầu!!!");
         }
     }
 
     public static void checkDescription(String string) throws FormatServiceException {
-        String regex = "^[A-Z]{1}+[a-z]{0,}+\\ +[a-z]{0,}$";
+        String regex = "^([A-Za-z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập mô tả tiện nghi theo đúng yêu cầu!!!");
         }
@@ -90,7 +90,7 @@ public class FormatServiceException extends Exception {
     }
 
     public static void checkFreeService(String string) throws FormatServiceException {
-        String regex = "^[massage|karaoke|food|drink|car]$";
+        String regex = "^(massage|karaoke|food|drink|car)$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập dịch vụ đi kèm theo đúng yêu cầu!!!");
         }

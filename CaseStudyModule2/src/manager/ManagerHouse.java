@@ -3,10 +3,9 @@ package manager;
 import commons.FuncWriteRead;
 import commons.FormatServiceException;
 import models.House;
+import models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ManagerHouse {
     static Scanner scanner = new Scanner(System.in);
@@ -25,7 +24,7 @@ public class ManagerHouse {
         String floors = ManagerServices.inputFloors();
         House house = new House(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, roomStandard, description, floors);
         listHouse.add(house);
-        System.out.println(listHouse);
+//        System.out.println(listHouse);
         FuncWriteRead.writeHouseToCSV("src\\data\\house.csv", listHouse, true);
     }
 
@@ -49,5 +48,14 @@ public class ManagerHouse {
         for (House house : listHouse) {
             System.out.println(house.showInfor());
         }
+    }
+
+    public void showNameHouseNotDuplicate() {
+        Set<String> set = new TreeSet<>();
+        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
+        for (House house : listHouse) {
+            set.add(house.getServiceName());
+        }
+        System.out.println(set);
     }
 }

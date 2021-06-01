@@ -4,9 +4,7 @@ import commons.FuncWriteRead;
 import commons.FormatServiceException;
 import models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ManagerVilla {
     static Scanner scanner = new Scanner(System.in);
@@ -65,5 +63,14 @@ public class ManagerVilla {
         for (Villa villa : listVilla) {
             System.out.println(villa.showInfor());
         }
+    }
+
+    public void showNameVillaNotDuplicate() {
+        Set<String> set = new TreeSet<>();
+        listVilla = FuncWriteRead.readVillaFromCSV("src\\data\\Villa.csv");
+        for (Villa villa : listVilla) {
+            set.add(villa.getServiceName());
+        }
+        System.out.println(set);
     }
 }

@@ -26,7 +26,7 @@ public class ManagerCustomer {
         String address = inputAddress();
         Customer customer = new Customer(nameCustomer, birthDay, gender, identityCard, phoneNumber, email, customerType, address);
         listCustomer.add(customer);
-        System.out.println(listCustomer);
+//        System.out.println(listCustomer);
         FuncWriteRead.writeCustomerToCSV("src\\data\\customer.csv", listCustomer, true);
     }
 

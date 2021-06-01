@@ -3,10 +3,9 @@ package manager;
 import commons.FuncWriteRead;
 import commons.FormatServiceException;
 import models.Room;
+import models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class ManagerRoom {
     static Scanner scanner = new Scanner(System.in);
@@ -23,7 +22,7 @@ public class ManagerRoom {
         String freeService = inputFreeService();
         Room room = new Room(id, serviceName, acreageUser, totalPrice, totalPeople, totalDate, freeService);
         listRoom.add(room);
-        System.out.println(listRoom);
+//        System.out.println(listRoom);
         FuncWriteRead.writeRoomToCSV("src\\data\\room.csv", listRoom, true);
     }
 
@@ -62,5 +61,14 @@ public class ManagerRoom {
         for (Room room : listRoom) {
             System.out.println(room.showInfor());
         }
+    }
+
+    public void showNameRoomNotDuplicate() {
+        Set<String> set = new TreeSet<>();
+        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
+        for (Room room : listRoom) {
+            set.add(room.getServiceName());
+        }
+        System.out.println(set);
     }
 }
