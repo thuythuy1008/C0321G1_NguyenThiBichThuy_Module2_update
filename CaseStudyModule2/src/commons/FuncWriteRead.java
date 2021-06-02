@@ -89,6 +89,20 @@ public class FuncWriteRead {
         }
     }
 
+    public static void writeCinemaTicketToCSV(String fileName, List<CinemaTicket> cinemaTicketList, boolean status) {
+        try {
+            FileWriter outputStream = new FileWriter("src\\data\\cinemaTicket.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
+            for (CinemaTicket cinemaTicket : cinemaTicketList) {
+                bufferedWriter.write(cinemaTicket.toString());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static List<Villa> readVillaFromCSV(String fileName) {
         List<Villa> listVilla = new ArrayList<>();
         try {

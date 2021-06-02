@@ -50,7 +50,7 @@ public class MainController {
                     managerEmployee.addEmployee();
                     break;
                 case 7:
-                    cinemaForCustomer.cinema4D();
+                    cinemaForCustomer.addCinemaTicket();
                 case 8:
                     managerEmployee.searchEmployee();
                 case 9:

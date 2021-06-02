@@ -23,16 +23,17 @@ public class ManagerBooking {
 
     public void addNewBooking() {
         managerCustomer.showInformationCustomers();
+        listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
         boolean check = true;
         String id;
         String line = null;
         try {
             System.out.println("Chọn số thứ tự của khách hàng muốn đặt dịch vụ!");
-            listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+
             int choose = Integer.parseInt(scanner.nextLine());
             for (int i = 0; i < listCustomer.size(); i++) {
                 if (i == choose - 1) {
-                    line = listCustomer.get(i).toString();
+                    line = listCustomer.get(i).getNameCustomer();
                     check = true;
                 }
             }
@@ -55,7 +56,7 @@ public class ManagerBooking {
                     listVilla = FuncWriteRead.readVillaFromCSV("src\\data\\villa.csv");
                     for (Villa villa : listVilla) {
                         if (id.equals(villa.getId())) {
-                            line = line + "," + villa;
+                            line = line + "," + villa.getId();
                             System.out.println(line);
                             FuncWriteRead.writeBookingServiceToCSV("src\\data\\booking.csv", line, true);
                         }
@@ -68,7 +69,7 @@ public class ManagerBooking {
                     listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
                     for (House house : listHouse) {
                         if (id.equals(house.getId())) {
-                            line = line + "," + house;
+                            line = line + "," + house.getId();
                             System.out.println(line);
                             FuncWriteRead.writeBookingServiceToCSV("src\\data\\booking.csv", line, true);
                         }
@@ -81,7 +82,7 @@ public class ManagerBooking {
                     listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
                     for (Room room : listRoom) {
                         if (id.equals(room.getId())) {
-                            line = line + "," + room;
+                            line = line + "," + room.getId();
                             System.out.println(line);
                             FuncWriteRead.writeBookingServiceToCSV("src\\data\\booking.csv", line, true);
                         }

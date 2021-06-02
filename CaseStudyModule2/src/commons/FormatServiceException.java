@@ -27,7 +27,7 @@ public class FormatServiceException extends Exception {
     }
 
     public static void checkVerviceName(String string) throws FormatServiceException {
-        String regex = "^([A-Z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ0-9]*[\\s]?)+$";
+        String regex = "^([A-Z][a-z0-9]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập tên theo đúng yêu cầu!!!");
         }
@@ -62,14 +62,14 @@ public class FormatServiceException extends Exception {
     }
 
     public static void checkRoomStandard(String string) throws FormatServiceException {
-        String regex = "^([A-Za-z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*[\\s]?)+$";
+        String regex = "^([A-Za-z][a-z]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập tiêu chuẩn phòng theo đúng yêu cầu!!!");
         }
     }
 
     public static void checkDescription(String string) throws FormatServiceException {
-        String regex = "^([A-Za-z][a-zàáâãèéêìíòóôõùúăđĩũơưăạảấầẩẫậắằẳẵặẹẻẽềềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]*[\\s]?)+$";
+        String regex = "^([A-Za-z][a-z]*[\\s]?)+$";
         if (!string.matches(regex)) {
             throw new FormatServiceException("Vui lòng nhập mô tả tiện nghi theo đúng yêu cầu!!!");
         }
