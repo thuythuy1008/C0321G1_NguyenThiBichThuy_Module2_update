@@ -1,9 +1,9 @@
 package manager;
 
 import commons.FuncWriteRead;
-import commons.FormatServiceException;
+import commons.ValidateService;
+import commons.exception.ServiceException;
 import models.House;
-import models.Villa;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ public class ManagerHouse {
     static List<House> listHouse = new ArrayList();
 
     public void addHouse() {
-        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
+//        listHouse = FuncWriteRead.readHouseFromCSV("src\\data\\house.csv");
         System.out.println("Thêm House!!! ");
         String id = inputIdHouse();
         String serviceName = ManagerServices.inputServiceName();
@@ -34,9 +34,9 @@ public class ManagerHouse {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdHouse = scanner.nextLine();
-                FormatServiceException.checkIdHouse(inputIdHouse);
+                ValidateService.checkIdHouse(inputIdHouse);
                 return inputIdHouse;
-            } catch (FormatServiceException e) {
+            } catch (ServiceException e) {
                 System.err.println(e.getMessage());
             }
         }

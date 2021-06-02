@@ -22,8 +22,12 @@ public class ManagerBooking {
     static ManagerHouse managerHouse = new ManagerHouse();
 
     public void addNewBooking() {
-        managerCustomer.showInformationCustomers();
         listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+        int number = 1;
+        for (Customer customer : listCustomer) {
+            System.out.print(number++ + " ");
+            System.out.println(customer.showInfor());
+        }
         boolean check = true;
         String id;
         String line = null;
@@ -34,6 +38,7 @@ public class ManagerBooking {
             for (int i = 0; i < listCustomer.size(); i++) {
                 if (i == choose - 1) {
                     line = listCustomer.get(i).getNameCustomer();
+                    System.out.println(line);
                     check = true;
                 }
             }
@@ -55,7 +60,7 @@ public class ManagerBooking {
                     id = scanner.nextLine();
                     listVilla = FuncWriteRead.readVillaFromCSV("src\\data\\villa.csv");
                     for (Villa villa : listVilla) {
-                        if (id.equals(villa.getId())) {
+                        if (id == (villa.getId())) {
                             line = line + "," + villa.getId();
                             System.out.println(line);
                             FuncWriteRead.writeBookingServiceToCSV("src\\data\\booking.csv", line, true);

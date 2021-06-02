@@ -63,10 +63,13 @@ public class ManagerEmployee {
         }
         System.out.println("Nhập họ tên nhân viên cần tìm!");
         String name = scanner.nextLine();
-        for (Employee employee : stack) {
-            if (name.equals(employee.getNameEmployee())) {
-                System.out.println(employee.showInfor());
+        while (!stack.isEmpty()) {
+            if (name.equals(stack.peek().getNameEmployee())) {
+                System.out.println(stack.peek().showInfor());
                 check = false;
+                break;
+            } else {
+                stack.pop();
             }
         }
         if (check) {

@@ -1,7 +1,8 @@
 package manager;
 
-import commons.FormatCustomerException;
+import commons.ValidateCustomer;
 import commons.FuncWriteRead;
+import commons.exception.CustomerException;
 import models.ComparatorByNameCustomer;
 import models.Customer;
 
@@ -15,7 +16,7 @@ public class ManagerCustomer {
     static List<Customer> listCustomer = new ArrayList();
 
     public void addNewCustomer() {
-        listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+//        listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
         String nameCustomer = inputNameCustomer();
         String birthDay = inputBirthDay();
         String gender = inputGender();
@@ -35,9 +36,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập tên khách hàng: ");
                 inputNameCustomer = scanner.nextLine();
-                FormatCustomerException.nameException(inputNameCustomer);
+                ValidateCustomer.validateName(inputNameCustomer);
                 return inputNameCustomer;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -49,9 +50,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập ngày tháng năm sinh: ");
                 inputBirthDay = scanner.nextLine();
-                FormatCustomerException.checkBirthDay(inputBirthDay);
+                ValidateCustomer.checkBirthDay(inputBirthDay);
                 return inputBirthDay;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -64,9 +65,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập giới tính: ");
                 inputGender = scanner.nextLine();
-                FormatCustomerException.genderException(inputGender);
+                ValidateCustomer.genderException(inputGender);
                 return inputGender;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -79,9 +80,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập số CMND: ");
                 inputIdentityCard = scanner.nextLine();
-                FormatCustomerException.idCardException(inputIdentityCard);
+                ValidateCustomer.idCardException(inputIdentityCard);
                 return inputIdentityCard;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -94,9 +95,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập số điện thoại: ");
                 inputPhoneNumber = scanner.nextLine();
-                FormatCustomerException.phoneNumberException(inputPhoneNumber);
+                ValidateCustomer.phoneNumberException(inputPhoneNumber);
                 return inputPhoneNumber;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -109,9 +110,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập email: ");
                 inputEmail = scanner.nextLine();
-                FormatCustomerException.emailException(inputEmail);
+                ValidateCustomer.emailException(inputEmail);
                 return inputEmail;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -124,9 +125,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập loại khách hàng: ");
                 inputCustomerType = scanner.nextLine();
-                FormatCustomerException.customerTypeException(inputCustomerType);
+                ValidateCustomer.customerTypeException(inputCustomerType);
                 return inputCustomerType;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }
@@ -139,9 +140,9 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập địa chỉ: ");
                 inputAddress = scanner.nextLine();
-                FormatCustomerException.addressException(inputAddress);
+                ValidateCustomer.addressException(inputAddress);
                 return inputAddress;
-            } catch (FormatCustomerException e) {
+            } catch (CustomerException e) {
                 e.printStackTrace();
                 System.err.println(e.getMessage());
             }

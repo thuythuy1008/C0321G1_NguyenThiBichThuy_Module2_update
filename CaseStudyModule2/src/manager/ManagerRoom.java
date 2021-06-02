@@ -1,9 +1,9 @@
 package manager;
 
 import commons.FuncWriteRead;
-import commons.FormatServiceException;
+import commons.ValidateService;
+import commons.exception.ServiceException;
 import models.Room;
-import models.Villa;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ public class ManagerRoom {
     static List<Room> listRoom = new ArrayList();
 
     public void addRoom() {
-        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
+//        listRoom = FuncWriteRead.readRoomFromCSV("src\\data\\room.csv");
         System.out.println("Thêm Room!!! ");
         String id = inputIdRoom();
         String serviceName = ManagerServices.inputServiceName();
@@ -32,9 +32,9 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdRoom = scanner.nextLine();
-                FormatServiceException.checkIdRoom(inputIdRoom);
+                ValidateService.checkIdRoom(inputIdRoom);
                 return inputIdRoom;
-            } catch (FormatServiceException e) {
+            } catch (ServiceException e) {
                 System.err.println(e.getMessage());
             }
         }
@@ -46,9 +46,9 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập dịch vụ đi kèm: ");
                 inputFreeService = scanner.nextLine();
-                FormatServiceException.checkFreeService(inputFreeService);
+                ValidateService.checkFreeService(inputFreeService);
                 return inputFreeService;
-            } catch (FormatServiceException e) {
+            } catch (ServiceException e) {
                 System.err.println(e.getMessage());
             }
         }

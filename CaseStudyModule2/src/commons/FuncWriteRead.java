@@ -9,7 +9,7 @@ import java.util.List;
 public class FuncWriteRead {
     public static void writeVillaToCSV(String fileName, List<Villa> listVilla, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\Villa.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\Villa.csv", status);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Villa villa : listVilla) {
                 bufferedWriter.write(villa.toString());
@@ -23,7 +23,7 @@ public class FuncWriteRead {
 
     public static void writeRoomToCSV(String fileName, List<Room> listRoom, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\room.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\room.csv", status);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Room room : listRoom) {
                 bufferedWriter.write(room.toString());
@@ -37,7 +37,7 @@ public class FuncWriteRead {
 
     public static void writeHouseToCSV(String fileName, List<House> listHouse, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\house.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\house.csv", status);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (House house : listHouse) {
                 bufferedWriter.write(house.toString());
@@ -51,7 +51,7 @@ public class FuncWriteRead {
 
     public static void writeCustomerToCSV(String fileName, List<Customer> listCustomer, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\customer.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\customer.csv", status);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             for (Customer customer : listCustomer) {
                 bufferedWriter.write(customer.toString());
@@ -65,7 +65,7 @@ public class FuncWriteRead {
 
     public static void writeBookingServiceToCSV(String fileName, String string, boolean status) {
         try {
-            FileWriter outputStream = new FileWriter("src\\data\\booking.csv");
+            FileWriter outputStream = new FileWriter("src\\data\\booking.csv", status);
             BufferedWriter bufferedWriter = new BufferedWriter(outputStream);
             bufferedWriter.write(string);
             bufferedWriter.newLine();
@@ -113,7 +113,6 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 Villa villa = new Villa(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7], strings[8], strings[9]);
                 listVilla.add(villa);
-//                System.out.println(villa);
             }
             bufferedReader.close();
             inputStream.close();
@@ -133,7 +132,6 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 Room room = new Room(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6]);
                 listRoom.add(room);
-//                System.out.println(room);
             }
             bufferedReader.close();
             inputStream.close();
@@ -153,7 +151,6 @@ public class FuncWriteRead {
                 String[] strings = line.split(",");
                 House house = new House(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5], strings[6], strings[7], strings[8]);
                 listHouse.add(house);
-//                System.out.println(house);
             }
             bufferedReader.close();
             inputStream.close();
