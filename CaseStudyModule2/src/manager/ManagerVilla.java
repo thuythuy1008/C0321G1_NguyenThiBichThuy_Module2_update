@@ -35,7 +35,7 @@ public class ManagerVilla {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdVilla = scanner.nextLine();
-                ValidateService.checkIdVilla(inputIdVilla);
+                ValidateService.validateIdVilla(inputIdVilla);
                 return inputIdVilla;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -49,7 +49,7 @@ public class ManagerVilla {
             try {
                 System.out.println("Diện tích hồ bơi: ");
                 inputSwimmingPoolArea = scanner.nextLine();
-                ValidateService.checkSwimmingPoolArea(inputSwimmingPoolArea);
+                ValidateService.validateSwimmingPoolArea(inputSwimmingPoolArea);
                 return inputSwimmingPoolArea;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());

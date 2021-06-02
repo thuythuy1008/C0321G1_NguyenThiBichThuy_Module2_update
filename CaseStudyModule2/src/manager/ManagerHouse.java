@@ -34,7 +34,7 @@ public class ManagerHouse {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdHouse = scanner.nextLine();
-                ValidateService.checkIdHouse(inputIdHouse);
+                ValidateService.validateIdHouse(inputIdHouse);
                 return inputIdHouse;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());

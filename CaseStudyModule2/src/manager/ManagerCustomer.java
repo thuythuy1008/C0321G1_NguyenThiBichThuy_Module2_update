@@ -50,7 +50,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập ngày tháng năm sinh: ");
                 inputBirthDay = scanner.nextLine();
-                ValidateCustomer.checkBirthDay(inputBirthDay);
+                ValidateCustomer.validateBirthDay(inputBirthDay);
                 return inputBirthDay;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -65,7 +65,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập giới tính: ");
                 inputGender = scanner.nextLine();
-                ValidateCustomer.genderException(inputGender);
+                ValidateCustomer.validateGender(inputGender);
                 return inputGender;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -80,7 +80,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập số CMND: ");
                 inputIdentityCard = scanner.nextLine();
-                ValidateCustomer.idCardException(inputIdentityCard);
+                ValidateCustomer.validateIdCard(inputIdentityCard);
                 return inputIdentityCard;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -95,7 +95,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập số điện thoại: ");
                 inputPhoneNumber = scanner.nextLine();
-                ValidateCustomer.phoneNumberException(inputPhoneNumber);
+                ValidateCustomer.validatePhoneNumber(inputPhoneNumber);
                 return inputPhoneNumber;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -110,7 +110,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập email: ");
                 inputEmail = scanner.nextLine();
-                ValidateCustomer.emailException(inputEmail);
+                ValidateCustomer.validateEmail(inputEmail);
                 return inputEmail;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -125,7 +125,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập loại khách hàng: ");
                 inputCustomerType = scanner.nextLine();
-                ValidateCustomer.customerTypeException(inputCustomerType);
+                ValidateCustomer.validateCustomerType(inputCustomerType);
                 return inputCustomerType;
             } catch (CustomerException e) {
                 e.printStackTrace();
@@ -140,7 +140,7 @@ public class ManagerCustomer {
             try {
                 System.out.println("Nhập địa chỉ: ");
                 inputAddress = scanner.nextLine();
-                ValidateCustomer.addressException(inputAddress);
+                ValidateCustomer.validateAddress(inputAddress);
                 return inputAddress;
             } catch (CustomerException e) {
                 e.printStackTrace();

@@ -14,7 +14,7 @@ public class ManagerServices {
             try {
                 System.out.println("Nhập tên dịch vụ: ");
                 inputServiceName = scanner.nextLine();
-                ValidateService.checkVerviceName(inputServiceName);
+                ValidateService.validateServiceName(inputServiceName);
                 return inputServiceName;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -28,7 +28,7 @@ public class ManagerServices {
             try {
                 System.out.println("Diện tích sử dụng: ");
                 inputAcreageUser = scanner.nextLine();
-                ValidateService.checkAcreageUser(inputAcreageUser);
+                ValidateService.validateAcreageUser(inputAcreageUser);
                 return inputAcreageUser;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -42,7 +42,7 @@ public class ManagerServices {
             try {
                 System.out.println("Chi phí thuê: ");
                 inputTotalPrice = scanner.nextLine();
-                ValidateService.checkTotalPrice(inputTotalPrice);
+                ValidateService.validateTotalPrice(inputTotalPrice);
                 return inputTotalPrice;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -56,7 +56,7 @@ public class ManagerServices {
             try {
                 System.out.println("Số lượng người tối đa: ");
                 inputTotalPeople = scanner.nextLine();
-                ValidateService.checkTotalPeople(inputTotalPeople);
+                ValidateService.validateTotalPeople(inputTotalPeople);
                 return inputTotalPeople;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -70,7 +70,7 @@ public class ManagerServices {
             try {
                 System.out.println("Kiểu thuê: ");
                 inputTotalDate = scanner.nextLine();
-                ValidateService.checkTotalDate(inputTotalDate);
+                ValidateService.validateTotalDate(inputTotalDate);
                 return inputTotalDate;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -84,7 +84,7 @@ public class ManagerServices {
             try {
                 System.out.println("Tiêu chuẩn phòng: ");
                 inputRoomStandard = scanner.nextLine();
-                ValidateService.checkRoomStandard(inputRoomStandard);
+                ValidateService.validateRoomStandard(inputRoomStandard);
                 return inputRoomStandard;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -98,7 +98,7 @@ public class ManagerServices {
             try {
                 System.out.println("Mô tả tiện nghi: ");
                 inputDescription = scanner.nextLine();
-                ValidateService.checkDescription(inputDescription);
+                ValidateService.validateDescription(inputDescription);
                 return inputDescription;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -112,7 +112,7 @@ public class ManagerServices {
             try {
                 System.out.println("Số tầng:");
                 inputFloors = scanner.nextLine();
-                ValidateService.checkFloors(inputFloors);
+                ValidateService.validateFloors(inputFloors);
                 return inputFloors;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());

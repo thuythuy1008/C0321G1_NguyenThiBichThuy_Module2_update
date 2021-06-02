@@ -32,7 +32,7 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập mã dịch vụ: ");
                 inputIdRoom = scanner.nextLine();
-                ValidateService.checkIdRoom(inputIdRoom);
+                ValidateService.validateIdRoom(inputIdRoom);
                 return inputIdRoom;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
@@ -46,7 +46,7 @@ public class ManagerRoom {
             try {
                 System.out.println("Nhập dịch vụ đi kèm: ");
                 inputFreeService = scanner.nextLine();
-                ValidateService.checkFreeService(inputFreeService);
+                ValidateService.validateFreeService(inputFreeService);
                 return inputFreeService;
             } catch (ServiceException e) {
                 System.err.println(e.getMessage());
