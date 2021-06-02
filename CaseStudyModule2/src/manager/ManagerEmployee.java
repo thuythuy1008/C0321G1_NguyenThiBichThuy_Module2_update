@@ -58,6 +58,7 @@ public class ManagerEmployee {
         boolean check = true;
         listEmployee = FuncWriteRead.readEmployeeFromCSV("src\\data\\employee.csv");
         for (Employee employee : listEmployee) {
+            System.out.println(employee.showInfor());
             stack.push(employee);
         }
         System.out.println("Nhập họ tên nhân viên cần tìm!");
