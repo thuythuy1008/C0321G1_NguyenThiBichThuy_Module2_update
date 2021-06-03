@@ -48,41 +48,46 @@ public class CinemaForCustomer {
             line = cinemaTicketList.get(i).toString();
             check = true;
             if (check) {
-                if (queue.size() != number) {
-                    System.out.println("Bạn là khách hàng nào: \n" +
-                            "1. Khách hàng đang thuê dịch vụ trong Furama \n" +
-                            "2. Khách hàng bên ngoài");
-                    int choose = Integer.parseInt(scanner.nextLine());
-                    switch (choose) {
-                        case 1:
-                            boolean yes = true;
-                            listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
-                            System.out.println("Tên của quý khách là gì?");
-                            String nameCustomer = scanner.nextLine();
-                            for (Customer customer : listCustomer) {
-                                if (nameCustomer.equals(customer.getNameCustomer())) {
-                                    line = customer.getNameCustomer() + "," + line;
-                                    queue.add(line);
-                                    System.out.println("Bạn đã mua được vé xem phim! Số vé còn lại là: " + (number - queue.size()));
-                                    yes = false;
+                try {
+                    if (queue.size() != number) {
+                        System.out.println("Bạn là khách hàng nào: \n" +
+                                "1. Khách hàng đang thuê dịch vụ trong Furama \n" +
+                                "2. Khách hàng bên ngoài");
+                        int choose = Integer.parseInt(scanner.nextLine());
+                        switch (choose) {
+                            case 1:
+                                boolean yes = true;
+                                listCustomer = FuncWriteRead.readCustomerFromCSV("src\\data\\customer.csv");
+                                System.out.println("Tên của quý khách là gì?");
+                                String nameCustomer = scanner.nextLine();
+                                for (Customer customer : listCustomer) {
+                                    if (nameCustomer.equals(customer.getNameCustomer())) {
+                                        line = customer.getNameCustomer() + "," + line;
+                                        queue.add(line);
+                                        System.out.println("Bạn đã mua được vé xem phim! Số vé còn lại là: " + (number - queue.size()));
+                                        yes = false;
+                                    }
                                 }
-                            }
-                            if (yes) {
-                                System.out.println("Bạn không có tên trong danh sách khách hàng đang thuê dịch vụ tại Furama! Mời bạn chọn lại!!!");
-                                cinema4D();
-                            }
-                            break;
-                        case 2:
-                            System.out.println("Tên của quý khách là gì?");
-                            String nameCustomer1 = scanner.nextLine();
-                            line = nameCustomer1 + "," + line;
-                            queue.add(line);
-                            System.out.println("Bạn đã mua được vé xem phim! Số vé còn lại là: " + (number - queue.size()));
-                            break;
-                        default:
-                            System.out.println("Vui lòng chọn 1 hoặc 2!!!");
+                                if (yes) {
+                                    System.out.println("Bạn không có tên trong danh sách khách hàng đang thuê dịch vụ tại Furama! Mời bạn chọn lại!!!");
+                                    cinema4D();
+                                }
+                                break;
+                            case 2:
+                                System.out.println("Tên của quý khách là gì?");
+                                String nameCustomer1 = scanner.nextLine();
+                                line = nameCustomer1 + "," + line;
+                                queue.add(line);
+                                System.out.println("Bạn đã mua được vé xem phim! Số vé còn lại là: " + (number - queue.size()));
+                                break;
+                            default:
+                                System.out.println("Vui lòng chọn 1 hoặc 2!!!");
+                        }
                     }
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
                 }
+
             }
         }
         if ((queue.size() == number)) {
